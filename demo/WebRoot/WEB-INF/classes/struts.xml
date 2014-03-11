@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="cm" namespace="/" extends="struts-default">
+		<default-action-ref name="init"></default-action-ref>
+		<action name="init" class="initAction">
+			<result>list.jsp</result>
+		</action>
+		<action name="save" class="saveAction">
+			<result type="redirectAction">init</result>
+		</action>
+		<action name="delete" class="deleteAction">
+			<result type="redirectAction">init</result>
+		</action>
+		<action name="single" class="singleAction">
+			<result >update.jsp</result>
+		</action>
+		<action name="update" class="updateAction">
+			<result type="redirectAction">init</result>
+		</action>
+	</package>
+</struts>
